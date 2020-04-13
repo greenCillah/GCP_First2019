@@ -1,4 +1,4 @@
 steps:
-- name: 'apps/first2019-255711'
+- name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy']
   timeout: '160s'
