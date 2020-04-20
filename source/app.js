@@ -13,6 +13,7 @@
 // limitations under the License.
 
 'use strict';
+console.log('start');
 
 // [START gae_node_request_example]
 const express = require('express');
@@ -21,16 +22,18 @@ const app = express();
 
 const topicName = 'FireFirstFunction';
 const data = JSON.stringify({foo: 'Name should be here'});
-
+console.log('start2');
 // Imports the Google Cloud client library
 const {PubSub} = require('@google-cloud/pubsub');
-
+console.log('start3');
 // Creates a client; cache this for further use
 const pubSubClient = new PubSub();
-
+console.log('start4');
 
 app.get('/', (req, res) => {
+  console.log('start5');
   publishMessage().catch(console.error);
+  console.log('start6');
   res.status(200).send('Hello, freddy!').end();
 });
 
