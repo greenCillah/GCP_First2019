@@ -13,7 +13,7 @@
 // limitations under the License.
 
 'use strict';
-
+console.log(222);
 var tools = require('./pubsublib.js');
 // var tools;
 
@@ -32,6 +32,7 @@ const {PubSub} = require('@google-cloud/pubsub');
 // Creates a client; cache this for further use
 const pubSubClient = new PubSub();
 
+console.log(111);
 
 router.get("/",function(req,res){
   publishMessage().catch(console.error);
