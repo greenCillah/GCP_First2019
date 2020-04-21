@@ -13,7 +13,8 @@
 // limitations under the License.
 
 'use strict';
-console.log('start');
+
+var tools = require('./pubsub/pubsublib.js');
 
 // [START gae_node_request_example]
 const express = require('express');
@@ -37,7 +38,7 @@ router.get("/",function(req,res){
 });
 
 router.get("/fred",function(req,res){
-  publishMessage().catch(console.error);
+  publishMessage2().catch(console.error);
   res.status(200).send('Fred').end();
 });
 
