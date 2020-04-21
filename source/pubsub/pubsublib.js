@@ -1,5 +1,7 @@
 module.exports = {
     publishMessage2: async function () {
+        const pubSubClient = new PubSub();  
+      
         const topicName = 'FireFirstFunction';
 
         const data = JSON.stringify({foo: 'New Publish Name'});
