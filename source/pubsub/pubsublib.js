@@ -2,6 +2,8 @@ module.exports = {
     publishMessage2: async function () {
         const topicName = 'FireFirstFunction';
 
+        const data = JSON.stringify({foo: 'New Publish Name'});
+
         // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject)
         const dataBuffer = Buffer.from(data);
       
