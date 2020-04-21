@@ -46,6 +46,8 @@ async function publishMessage() {
   console.log(`Message ${messageId} published.`);
 }
 
+app.use("/",router);
+
 // Start the server
 const PORT = process.env.PORT || 8080;
 
