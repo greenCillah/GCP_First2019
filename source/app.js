@@ -14,7 +14,7 @@
 
 'use strict';
 
-var tools = require('./pubsub/pubsublib.js');
+var tools = require('./pubsub/pubsublib');
 
 // [START gae_node_request_example]
 const express = require('express');
