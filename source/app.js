@@ -30,7 +30,8 @@ const {PubSub} = require('@google-cloud/pubsub');
 // Creates a client; cache this for further use
 const pubSubClient = new PubSub();
 
-router.get("/",(req,res) {
+
+router.get("/",function(req,res){
   publishMessage().catch(console.error);
   res.status(200).send('Hello, Router!').end();
 });
