@@ -1,5 +1,5 @@
 module.exports = {
-    publishMessage2: async function () {
+    publishMessage2: function () {
         const topicName = 'FireFirstFunction';
 
         // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject)

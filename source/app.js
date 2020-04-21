@@ -14,7 +14,7 @@
 
 'use strict';
 
-var tools = require('./pubsub/pubsublib');
+var tools = require('./pubsub/pubsublib.js');
 
 // [START gae_node_request_example]
 const express = require('express');
@@ -38,7 +38,7 @@ router.get("/",function(req,res){
 });
 
 router.get("/fred",function(req,res){
-  publishMessage2().catch(console.error);
+  tools.publishMessage2().catch(console.error);
   res.status(200).send('Fred').end();
 });
 
