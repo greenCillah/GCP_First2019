@@ -36,6 +36,12 @@ router.get("/",function(req,res){
   res.status(200).send('Hello, Router!').end();
 });
 
+router.get("/fred",function(req,res){
+  publishMessage().catch(console.error);
+  res.status(200).send('Fred').end();
+});
+
+
 async function publishMessage() {
   const topicName = 'FireFirstFunction';
 
@@ -55,6 +61,6 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log('Press Ctrl+C to quit.');
 });
-// [END gae_node_request_example]
+
 
 module.exports = app;
