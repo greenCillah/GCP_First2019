@@ -19,6 +19,7 @@ console.log('start');
 const express = require('express');
 
 const app = express();
+const router = express.Router();
 
 const topicName = 'FireFirstFunction';
 const data = JSON.stringify({foo: 'Name should be here'});
@@ -29,13 +30,10 @@ const {PubSub} = require('@google-cloud/pubsub');
 // Creates a client; cache this for further use
 const pubSubClient = new PubSub();
 
-
-app.get('/', (req, res) => {
-
+router.get("/",(req,res) {
   publishMessage().catch(console.error);
-  res.status(200).send('Hello, Bill!').end();
+  res.status(200).send('Hello, Router!').end();
 });
-
 
 async function publishMessage() {
   const topicName = 'FireFirstFunction';
@@ -46,7 +44,6 @@ async function publishMessage() {
   const messageId = await pubSubClient.topic(topicName).publish(dataBuffer);
   console.log(`Message ${messageId} published.`);
 }
-
 
 // Start the server
 const PORT = process.env.PORT || 8080;
