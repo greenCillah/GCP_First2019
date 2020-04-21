@@ -1,5 +1,8 @@
 module.exports = {
     publishMessage2: async function () {
+      // Imports the Google Cloud client library
+        const {PubSub} = require('@google-cloud/pubsub');  
+      
         const pubSubClient = new PubSub();  
       
         const topicName = 'FireFirstFunction';
