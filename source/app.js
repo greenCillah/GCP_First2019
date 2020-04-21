@@ -13,7 +13,7 @@
 // limitations under the License.
 
 'use strict';
-console.log("222");
+console.log("222222");
 var tools = require('./pubsub/pubsublib.js');
 // var tools;
 console.log("444");
