@@ -15,6 +15,14 @@
 'use strict';
 
 var pubSubTools = require('./pubsub/pubsublib.js');
+//Firestore
+const admin = require('firebase-admin');
+
+admin.initializeApp({
+  credential: admin.credential.applicationDefault()
+});
+
+const db = admin.firestore();
 
 // [START gae_node_request_example]
 const express = require('express');
@@ -29,6 +37,19 @@ router.get("/",function(req,res){
 router.get("/fred",function(req,res){
   pubSubTools.sendToQueue("text");
   res.status(200).send('Fred').end();
+});
+
+router.get("/add",function(req,res){
+  let docRef = db.collection('users').doc('alovelace');
+
+  let setAda = docRef.set({
+    first: 'Ada',
+    last: 'Lovelace',
+    born: 1815
+  });
+
+
+  res.status(200).send('add').end();
 });
 
 app.use("/",router);
