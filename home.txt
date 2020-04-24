@@ -4,3 +4,8 @@ git clone \
 
     cd \
     python-docs-samples/appengine/standard_python37/hello_world
+
+    
+https://stackoverflow.com/questions/10462223/call-a-local-function-within-module-exports-from-another-function-in-module-ex
+
+exports module needs to be fixed.

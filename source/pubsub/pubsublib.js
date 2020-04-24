@@ -17,7 +17,7 @@ module.exports = {
     },
     sendToQueue: function (inputText) {
       console.log(1);
-       publishMessage().catch(console.error);
+      module.exports.publishMessage().catch(console.error);
        console.log(11);
     },
     bar: function () {
