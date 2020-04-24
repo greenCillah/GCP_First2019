@@ -15,6 +15,9 @@ module.exports = {
         const messageId = await pubSubClient.topic(topicName).publish(dataBuffer);
         console.log(`Message2 ${messageId} published.`);
     },
+    sendToQueue: function (inputText) {
+       tools.publishMessage2().catch(console.error);
+    },
     bar: function () {
       return(true);
     }

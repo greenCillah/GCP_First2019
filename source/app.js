@@ -13,47 +13,23 @@
 // limitations under the License.
 
 'use strict';
-console.log("222222");
+
 var tools = require('./pubsub/pubsublib.js');
-// var tools;
-console.log("444");
+
 // [START gae_node_request_example]
 const express = require('express');
 
 const app = express();
 const router = express.Router();
 
-const topicName = 'FireFirstFunction';
-const data = JSON.stringify({foo: 'Name should be here'});
-
-// Imports the Google Cloud client library
-const {PubSub} = require('@google-cloud/pubsub');
-
-// Creates a client; cache this for further use
-const pubSubClient = new PubSub();
-
-console.log(111);
-
 router.get("/",function(req,res){
-  publishMessage().catch(console.error);
   res.status(200).send('Hello, Router!').end();
 });
 
 router.get("/fred",function(req,res){
-  tools.publishMessage2().catch(console.error);
+  sendToQueue("text");
   res.status(200).send('Fred').end();
 });
-
-
-async function publishMessage() {
-  const topicName = 'FireFirstFunction';
-
-  // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject)
-  const dataBuffer = Buffer.from(data);
-
-  const messageId = await pubSubClient.topic(topicName).publish(dataBuffer);
-  console.log(`Message ${messageId} published.`);
-}
 
 app.use("/",router);
 
@@ -64,6 +40,5 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log('Press Ctrl+C to quit.');
 });
-
 
 module.exports = app;
