@@ -1,5 +1,5 @@
 module.exports = {
-    publishMessage2: async function () {
+    publishMessage: async function () {
       // Imports the Google Cloud client library
         const {PubSub} = require('@google-cloud/pubsub');  
       
@@ -16,7 +16,9 @@ module.exports = {
         console.log(`Message2 ${messageId} published.`);
     },
     sendToQueue: function (inputText) {
-       tools.publishMessage2().catch(console.error);
+      console.log(1);
+       publishMessage().catch(console.error);
+       console.log(11);
     },
     bar: function () {
       return(true);
