@@ -15,7 +15,7 @@
 'use strict';
 
 var pubSubTools = require('./pubsub/pubsublib.js');
-var dataInterface = require('./dataAccess/dataAccess.js');
+//var dataInterface = require('./dataAccess/dataAccess.js');
 
 //Firestore
 const admin = require('firebase-admin');
