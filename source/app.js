@@ -41,7 +41,7 @@ router.get("/fred",function(req,res){
   res.status(200).send('Fred').end();
 });
 
-router.get("/getdata",function(re,res){
+router.get("/getdata",function(req,res){
 
  // res.send(dataInterface.getRecords());
 }
