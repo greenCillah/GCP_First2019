@@ -14,12 +14,12 @@ module.exports = {
 
       console.log(1111);
         
-      let query = citiesRef.where('last', '==', true).get()
+      let query = citiesRef.get()
           .then(snapshot => {
         
           if (snapshot.empty) {
             console.log('No matching documents.');
-            return;
+            return('No matching documents.');
           }  
 
           snapshot.forEach(doc => {
@@ -30,6 +30,7 @@ module.exports = {
         })
         .catch(err => {
           console.log('Error getting documents', err);
+          return(err);
          });
          
         return(dataTxt);
