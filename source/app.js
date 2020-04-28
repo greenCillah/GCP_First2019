@@ -15,6 +15,8 @@
 'use strict';
 
 var pubSubTools = require('./pubsub/pubsublib.js');
+var dataInterface = require('./dataAccess/dataAccess.js');
+
 //Firestore
 const admin = require('firebase-admin');
 
@@ -38,6 +40,12 @@ router.get("/fred",function(req,res){
   pubSubTools.sendToQueue("text");
   res.status(200).send('Fred').end();
 });
+
+router.get("/getdata",function(re,res){
+
+  res.send(dataInterface.getRecords());
+}
+
 
 router.get("/add",function(req,res){
   let docRef = db.collection('users').doc('alovelace');
