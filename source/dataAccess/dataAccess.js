@@ -7,12 +7,12 @@ module.exports = {
         return(false);
       },
     getRecords: function (){
-      let dataTxt;  
+      let dataTxt = 'start';  
       
       let citiesRef = db.collection('users');
 
       console.log(1111);
-        
+      /*  
       let query = citiesRef.where('last', '==', true).get()
           .then(snapshot => {
         
@@ -30,7 +30,7 @@ module.exports = {
         .catch(err => {
           console.log('Error getting documents', err);
          });
-         
+        */ 
         return(dataTxt);
 
       }
