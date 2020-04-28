@@ -15,7 +15,7 @@
 'use strict';
 
 var pubSubTools = require('./pubsub/pubsublib.js');
-//var dataInterface = require('./dataAccess/dataAccess.js');
+var dataInterface = require('./dataAccess/dataAccess.js');
 
 //Firestore
 const admin = require('firebase-admin');
@@ -43,7 +43,7 @@ router.get("/fred",function(req,res){
 
 router.get("/getdata",function(req,res){
 
- // res.send(dataInterface.getRecords());
+  res.send(dataInterface.getRecords());
 });
 
 
