@@ -10,7 +10,10 @@ module.exports = {
       let dataTxt;  
       
       let citiesRef = db.collection('users');
-        let query = citiesRef.where('last', '==', true).get()
+
+      console.log(1111);
+        
+      let query = citiesRef.where('last', '==', true).get()
           .then(snapshot => {
         
           if (snapshot.empty) {
@@ -27,9 +30,12 @@ module.exports = {
         .catch(err => {
           console.log('Error getting documents', err);
          });
-
+         
         return(dataTxt);
+
       }
+      
+      
     };
 
 
