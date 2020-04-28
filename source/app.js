@@ -43,7 +43,7 @@ router.get("/fred",function(req,res){
 
 router.get("/getdata",function(req,res){
 
-  res.send(dataInterface.getRecords());
+  res.send(dataInterface.getRecords(db));
 });
 
 

@@ -1,11 +1,3 @@
-const admin = require('firebase-admin');
-
-admin.initializeApp({
-  credential: admin.credential.applicationDefault()
-});
-
-const db = admin.firestore();
-
 
 module.exports = {
 
@@ -15,7 +7,7 @@ module.exports = {
     foo: function () {
         return(false);
       },
-    getRecords: function (){
+    getRecords: function (db){
       let dataTxt = 'start';  
       
       let citiesRef = db.collection('users');
