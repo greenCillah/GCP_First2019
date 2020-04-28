@@ -12,7 +12,7 @@ module.exports = {
       
       let citiesRef = db.collection('users');
 
-      console.log(1111);
+      console.log(1111111);
         
       let query = citiesRef.get()
           .then(snapshot => {
