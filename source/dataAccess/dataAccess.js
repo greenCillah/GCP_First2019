@@ -23,7 +23,7 @@ module.exports = {
           }  
 
           snapshot.forEach(doc => {
-            console.log(doc.id, '=>', doc.data());
+            console.log(doc.id, '===>', doc.data());
 
             dataTxt = dataTxt + "___" + doc.data();
           });
