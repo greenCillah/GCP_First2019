@@ -31,8 +31,9 @@ module.exports = {
 
           });
 
-          return(dataTxt);
           console.log(i,dataTxt);
+          return(dataTxt);
+          
         })
         .catch(err => {
           console.log('Error getting documents', err);
