@@ -25,8 +25,7 @@ module.exports = {
 
           snapshot.forEach(doc => {
             
-
-            dataTxt = dataTxt + "___Count =: " + i.toString() + "__" + doc.data();
+            dataTxt = dataTxt + "___Count =: " + i.toString() + "__" + JSON.stringify(doc);
             
             console.log(i,dataTxt);
 
