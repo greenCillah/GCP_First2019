@@ -38,6 +38,9 @@ module.exports = {
           return(err);
          });
          
+        console.log('wowow');
+        console.log(dataTxt);
+
         return(dataTxt);
 
       }
