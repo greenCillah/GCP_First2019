@@ -12,8 +12,6 @@ module.exports = {
       
       let citiesRef = db.collection('users');
 
-      console.log(1111111);
-        
       let query = citiesRef.get()
           .then(snapshot => {
         
@@ -26,9 +24,11 @@ module.exports = {
           var i = 1;
 
           snapshot.forEach(doc => {
-            console.log(doc.id, '===>', doc.data());
+            
 
             dataTxt = dataTxt + "___Count =: " + i.toString() + "__" + doc.data();
+            
+            console.log(i,dataTxt);
 
             i++;
 
