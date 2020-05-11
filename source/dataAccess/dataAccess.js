@@ -8,7 +8,7 @@ module.exports = {
         return(false);
       },
     getRecords: function (db){
-      let dataTxt = 'start';  
+      let dataTxt = 'starting';  
       
       let citiesRef = db.collection('users');
 
