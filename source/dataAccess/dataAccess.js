@@ -31,7 +31,7 @@ module.exports = {
 
           });
 
-          console.log("blah",i,dataTxt);
+          console.log("A");
           return(dataTxt);
           
         })
@@ -39,7 +39,8 @@ module.exports = {
           console.log('Error getting documents', err);
           return(err);
          });
-         
+        
+        console.log("B");
         return("freddy");
 
       }
