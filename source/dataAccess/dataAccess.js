@@ -19,13 +19,19 @@ module.exports = {
         
           if (snapshot.empty) {
             console.log('No matching documents.');
-            return('No matching documents.');
+                                
+                return('No matching documents.');
           }  
+
+          var i = 1;
 
           snapshot.forEach(doc => {
             console.log(doc.id, '===>', doc.data());
 
-            dataTxt = dataTxt + "___" + doc.data();
+            dataTxt = dataTxt + "___Count =: " + i.toString() + "__" + doc.data();
+
+            i++;
+
           });
         })
         .catch(err => {
