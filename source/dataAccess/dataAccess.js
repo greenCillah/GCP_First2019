@@ -26,22 +26,20 @@ module.exports = {
           snapshot.forEach(doc => {
             
             dataTxt = dataTxt + "___Count =: " + i.toString() + "__" + JSON.stringify(doc);
-            
-            console.log(i,dataTxt);
-
+          
             i++;
 
           });
+
+          return(dataTxt);
+          console.log(i,dataTxt);
         })
         .catch(err => {
           console.log('Error getting documents', err);
           return(err);
          });
          
-        console.log('wowow');
-        console.log(dataTxt);
-
-        return(dataTxt);
+        
 
       }
       
