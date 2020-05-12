@@ -44,7 +44,7 @@ router.get("/fred",function(req,res){
 router.get("/getdata",function(req,res){
 
   res.send(dataInterface.getRecords(db));
-  console.log("bill");
+  console.log("end of getdata");
 });
 
 
