@@ -10,28 +10,27 @@ module.exports = {
     getRecords: function (db){
       let dataTxt = 'starting';  
       
-      let citiesRef = db.collection('users');
-
-      let query = citiesRef.get()
+      let users = db.collection('users');
+      console.log("A");
+      let query = users.get()
           .then(snapshot => {
-        
+            console.log("B");
           if (snapshot.empty) {
-            console.log('No matching documents.');
-                                
-                return('No matching documents.');
+             console.log('No matching documents.');
+             return('No matching documents.');
           }  
-
+          console.log("C");  
           var i = 1;
 
           snapshot.forEach(doc => {
-            
+            console.log("D");
             dataTxt = dataTxt + "___Count =: " + i.toString() + "__" + JSON.stringify(doc);
           
             i++;
 
           });
 
-          console.log("A");
+          console.log("E");
           return(dataTxt);
           
         })
@@ -40,8 +39,8 @@ module.exports = {
           return(err);
          });
         
-        console.log("B");
-        return("freddy");
+        console.log("F");
+        return("freddy should nt be here");
 
       }
       
